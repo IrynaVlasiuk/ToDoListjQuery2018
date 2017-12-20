@@ -1,42 +1,99 @@
-var User = function(name,surname) {
-    this.name = name,
-    this.surname = surname;
-};
+$("input.hidden-element").hide();
 
-User.prototype.createSimpleTask = function (title,status) {
-    console.log("Title: "+this.title);
-    console.log("Status: "+this.status);
-;}
+function ShowFormsForUser() {
+    $("#fname, #lname, #button").show();
+    $("#specialization, #jobTitle").hide();
+}
 
-var Student = function(name,surname,specialization) {
-    User.call(this,name,surname);
-    this.specialization = specialization;
-};
+function ShowFormsForStudent() {
+    ShowFormsForUser();
+    $("#specialization").show();
+}
 
-Student.prototype.createHomeTask = function (title,status,description) {
-    console.log("Title: "+this.title);
-    console.log("Status: "+this.status);
-    console.log("Description: "+this.description);
-};
+function ShowFormsForDeveloper() {
+    ShowFormsForStudent();
+    $("#jobTitle").show();
+}
 
-var Developer = function(name,surname,specialization,jobTitle) {
-    Student.call(this,name,surname,specialization);
-    this.jobTitle = jobTitle;
-};
+function HideAll() {
+    $("#fname, #lname, #button, #specialization, #jobTitle").hide();
+}
 
-Developer.prototype.createProjectTask = function (title,status,description,deadlineDate) {
-    console.log("Title: "+this.title);
-    console.log("Status: "+this.status);
-    console.log("Description: "+this.description);
-    console.log("DeadlineDate: "+this.deadlineDate);
-};
+$("#selectType").change(function () {
+    var type = $(this).val();
 
-Student.prototype = Object.create(User.prototype);
-Student.prototype.constructor = Student;
+    switch (type){
+        case TypeUser:
+            ShowFormsForUser();
+            break;
+        case TypeStudent:
+            ShowFormsForStudent();
+            break;
+        case TypeDeveloper:
+            ShowFormsForDeveloper();
+            break;
+        default:
+            HideAll();
+            break;
+    }
+});
 
+function CreateNewUser() {
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var user = new User(fname, lname);
+    console.log("user:" + user.name + ' ' + user.surname);
+}
 
-Developer.prototype = Object.create(Student.prototype);
-Developer.prototype.constructor = Developer;
+function CreateNewStudent() {
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var speciality = $("#specialization").val();
+    var student = new Student(fname, lname, speciality);
+    console.log("Student: " + student.name + ' ' + student.surname + ' ' + student.specialization);
+}
 
-//var title = prompt("Title","");
-//var status = promt("Status","")
+function CreateNewDeveloper() {
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var speciality = $("#specialization").val();
+    var jobTitle = $("#jobTitle").val();
+    var developer = new Developer(fname,lname,speciality,jobTitle);
+    console.log("Developer: " + developer.name + ' ' + developer.surname + ' ' + developer.specialization + ' ' + developer.jobTitle);
+}
+
+function createUser() {
+    if(!validateForm()) return;
+    var type = $("#selectType").val();
+
+    switch (type){
+        case TypeUser:
+            CreateNewUser();
+            break;
+        case TypeStudent:
+            CreateNewStudent();
+            break;
+        case TypeDeveloper:
+            CreateNewDeveloper();
+            break;
+    }
+}
+
+function validateForm(){
+    var isValid = true;
+    $("#form").find("input[type='text']").each(function() {
+        var elementId = $(this).attr("id");
+        var messageHolder = $("span[for="+ elementId +"]");
+        if($(this).css("display") != "none" && $(this).val() == "") {
+            $(this).addClass("invalid-field");
+            messageHolder.text("Please fill this field!");
+            console.log("false");
+            isValid = false;
+        } else {
+            $(this).removeClass("invalid-field");
+            messageHolder.text("");
+        }
+    });
+    return isValid;
+}
+

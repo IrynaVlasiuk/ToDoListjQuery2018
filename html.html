@@ -6,33 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
 <body>
 <h2>Welcome</h2>
 <div>
-    <form>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <form name="myForm" method="post" id="form">
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-        <label for="specialization">Specialization</label>
-        <input type="text" id="specialization" name="specialization" placeholder="Your specialization..">
-
-        <label for="jobTitle">Job Title</label>
-        <input type="text" id="jobTitle" name="jobTitle" placeholder="Your job title..">
-
-        <label for="selectType">Select Type</label>
         <select id="selectType" name="type">
+            <option value="">Choose</option>
             <option value="user">User</option>
             <option value="student">Student</option>
             <option value="developer">Developer</option>
         </select>
-        <input type="submit" value="Submit">
+
+        <input type="text" id="fname" name="firstname" class="hidden-element" placeholder="Your first name.." required>
+        <span class="validation-field" for="fname"></span>
+
+        <input type="text" id="lname" name="lastname" class="hidden-element" placeholder="Your last name.." required>
+        <span class="validation-field" for="lname"></span>
+
+        <input type="text" id="specialization" name="specialization" class="hidden-element" placeholder="Your specialization.." required>
+        <span class="validation-field" for="specialization"></span>
+
+        <input type="text" id="jobTitle" name="jobTitle" class="hidden-element" placeholder="Your job title.." required>
+        <span class="validation-field" for="jobTitle"></span>
+
+        <input type="button" value="Submit" id="button" class="hidden-element" onclick="createUser()">
     </form>
 </div>
-
+<script src="classes.js"></script>
+<script src="constants.js"></script>
 <script src="toDoList.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
