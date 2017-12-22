@@ -1,4 +1,3 @@
-const TypeUser = "user";
-const TypeStudent = "student";
-const TypeDeveloper = "developer";
-
+var TypeUser = Object.freeze('user');
+var TypeStudent = Object.freeze('student');
+var TypeDeveloper = Object.freeze('developer');

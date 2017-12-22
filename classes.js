@@ -8,8 +8,8 @@ User.prototype.createSimpleTask = function (title,status) {
     console.log("Status: "+this.status);
     };
 
-var Student = function(name,surname,specialization) {
-    User.call(this,name,surname);
+var Student = function(specialization) {
+    this.prototype = User.apply(this,specialization);
     this.specialization = specialization;
 };
 
@@ -19,8 +19,8 @@ Student.prototype.createHomeTask = function (title,status,description) {
     console.log("Description: "+this.description);
 };
 
-var Developer = function(name,surname,specialization,jobTitle) {
-    Student.call(this,name,surname,specialization);
+var Developer = function(jobTitle) {
+    this.prototype = Student.apply(this,arguments);
     this.jobTitle = jobTitle;
 };
 

@@ -1,4 +1,4 @@
-$("input.hidden-element").hide();
+$(".form-field,.form-button").hide();
 
 function ShowFormsForUser() {
     $("#fname, #lname, #button").show();
@@ -54,11 +54,12 @@ function CreateNewStudent() {
 }
 
 function CreateNewDeveloper() {
-    var fname = $("#fname").val();
-    var lname = $("#lname").val();
+
     var speciality = $("#specialization").val();
     var jobTitle = $("#jobTitle").val();
     var developer = new Developer(fname,lname,speciality,jobTitle);
+    console.log('Speciality:'+ speciality);
+    console.log('jobTitle'+ jobTitle);
     console.log("Developer: " + developer.name + ' ' + developer.surname + ' ' + developer.specialization + ' ' + developer.jobTitle);
 }
 
@@ -84,10 +85,9 @@ function validateForm(){
     $("#form").find("input[type='text']").each(function() {
         var elementId = $(this).attr("id");
         var messageHolder = $("span[for="+ elementId +"]");
-        if($(this).css("display") != "none" && $(this).val() == "") {
+        if($(this).css("display") !== "none" && $(this).val() === "") {
             $(this).addClass("invalid-field");
             messageHolder.text("Please fill this field!");
-            console.log("false");
             isValid = false;
         } else {
             $(this).removeClass("invalid-field");

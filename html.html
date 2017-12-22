@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 <body>
-<h2>Welcome</h2>
-<div>
+
+<div class="box">
+    <h1 class="head-text">Welcome</h1>
+    <hr>
+    <div class="input-fields">
     <form name="myForm" method="post" id="form">
 
         <select id="selectType" name="type">
@@ -20,26 +26,83 @@
             <option value="developer">Developer</option>
         </select>
 
-        <input type="text" id="fname" name="firstname" class="hidden-element" placeholder="Your first name.." required>
+        <input type="text" id="fname" name="firstname" class="form-field" placeholder="Your first name.." required>
         <span class="validation-field" for="fname"></span>
 
-        <input type="text" id="lname" name="lastname" class="hidden-element" placeholder="Your last name.." required>
+        <input type="text" id="lname" name="lastname" class="form-field" placeholder="Your last name.." required>
         <span class="validation-field" for="lname"></span>
 
-        <input type="text" id="specialization" name="specialization" class="hidden-element" placeholder="Your specialization.." required>
+        <input type="text" id="specialization" name="specialization" class="form-field" placeholder="Your specialization.." required>
         <span class="validation-field" for="specialization"></span>
 
-        <input type="text" id="jobTitle" name="jobTitle" class="hidden-element" placeholder="Your job title.." required>
+        <input type="text" id="jobTitle" name="jobTitle" class="form-field" placeholder="Your job title.." required>
         <span class="validation-field" for="jobTitle"></span>
 
-        <input type="button" value="Submit" id="button" class="hidden-element" onclick="createUser()">
+        <input type="button" value="Submit" id="button" class="form-button" onclick="createUser()">
     </form>
+    </div>
+
+    <div class="container">
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#menu1">Simple task</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Home task</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu3">Project task</a>
+            </li>
+         </ul>
+
+          <div class="tab-content">
+
+              <div class="container tab-pane active" id="menu1">
+                  <div class="field-title">
+                      <input type="text" class="form-task" placeholder="Title...">
+                  </div>
+                  <div class="field-status">
+                      <input type="text" class="form-task" placeholder="Status...">
+                  </div>
+
+                   <div class="field-description">
+                          <textarea class="field-textarea" placeholder="Description..."></textarea>
+                   </div>
+
+              <div class="container tab-pane fade" id="menu2">
+                  <div class="field-title">
+                      <input type="text" class="form-field" placeholder="Title...">
+                  </div>
+                  <div class="field-status">
+                      <input type="text" class="form-field" placeholder="Status...">
+                  </div>
+                  <div>
+                      <div class="field-description">
+                          <textarea class="field-textarea" placeholder="Description..."></textarea>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="container tab-pane fade" id="menu3">
+                  <div class="field-title">
+                      <input type="text" class="form-field" placeholder="Title...">
+                  </div>
+                  <div class="field-status">
+                      <input type="text" class="form-field" placeholder="Status...">
+                  </div>
+                  <div>
+                      <div class="field-description">
+                          <textarea class="field-textarea" placeholder="Description..."></textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
 </div>
+
 <script src="classes.js"></script>
 <script src="constants.js"></script>
 <script src="toDoList.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>
