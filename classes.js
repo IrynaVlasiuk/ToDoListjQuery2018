@@ -1,6 +1,6 @@
-var User = function(name,surname) {
-    this.name = name;
-    this.surname = surname;
+var User = function(obj) {
+    this.fname = obj.fname;
+    this.surname = obj.surname;
 };
 
 User.prototype.createSimpleTask = function (title,status) {
@@ -8,9 +8,9 @@ User.prototype.createSimpleTask = function (title,status) {
     console.log("Status: "+this.status);
     };
 
-var Student = function(specialization) {
-    this.prototype = User.apply(this,specialization);
-    this.specialization = specialization;
+var Student = function(obj) {
+    this.prototype = User.call(this, obj);
+    this.specialization = obj.specialization;
 };
 
 Student.prototype.createHomeTask = function (title,status,description) {
@@ -19,9 +19,9 @@ Student.prototype.createHomeTask = function (title,status,description) {
     console.log("Description: "+this.description);
 };
 
-var Developer = function(jobTitle) {
-    this.prototype = Student.apply(this,arguments);
-    this.jobTitle = jobTitle;
+var Developer = function(obj) {
+    this.prototype = Student.call(this,obj);
+    this.jobTitle = obj.jobTitle;
 };
 
 Developer.prototype.createProjectTask = function (title,status,description,deadlineDate) {

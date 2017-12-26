@@ -38,48 +38,6 @@ $("#selectType").change(function () {
     }
 });
 
-function CreateNewUser() {
-    var fname = $("#fname").val();
-    var lname = $("#lname").val();
-    var user = new User(fname, lname);
-    console.log("user:" + user.name + ' ' + user.surname);
-}
-
-function CreateNewStudent() {
-    var fname = $("#fname").val();
-    var lname = $("#lname").val();
-    var speciality = $("#specialization").val();
-    var student = new Student(fname, lname, speciality);
-    console.log("Student: " + student.name + ' ' + student.surname + ' ' + student.specialization);
-}
-
-function CreateNewDeveloper() {
-
-    var speciality = $("#specialization").val();
-    var jobTitle = $("#jobTitle").val();
-    var developer = new Developer(fname,lname,speciality,jobTitle);
-    console.log('Speciality:'+ speciality);
-    console.log('jobTitle'+ jobTitle);
-    console.log("Developer: " + developer.name + ' ' + developer.surname + ' ' + developer.specialization + ' ' + developer.jobTitle);
-}
-
-function createUser() {
-    if(!validateForm()) return;
-    var type = $("#selectType").val();
-
-    switch (type){
-        case TypeUser:
-            CreateNewUser();
-            break;
-        case TypeStudent:
-            CreateNewStudent();
-            break;
-        case TypeDeveloper:
-            CreateNewDeveloper();
-            break;
-    }
-}
-
 function validateForm(){
     var isValid = true;
     $("#form").find("input[type='text']").each(function() {
@@ -96,4 +54,56 @@ function validateForm(){
     });
     return isValid;
 }
+
+function createUser() {
+    if(!validateForm()) return;
+
+    var type = $("#selectType").val();
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var speciality = $("#specialization").val();
+    var jobTitle = $("#jobTitle").val();
+
+    switch (type){
+        case TypeUser:
+            var user = new User({fname:fname, surname:lname});
+            console.log(user);
+            break;
+        case TypeStudent:
+            var student = new Student({fname:fname, surname:lname, specialization:speciality});
+            console.log(student);
+            break;
+        case TypeDeveloper:
+            var developer = new Developer({fname:fname, surname:lname, specialization:speciality,jobTitle:jobTitle});
+            console.log(developer);
+            break;
+    }
+}
+
+// var myNodelist = document.getElementsByTagName("li");
+// var i;
+// for (i = 0; i < myNodelist.length; i++) {
+//     var button = document.createElement("input");
+//     var txt = document.createTextNode("\u00D7");
+//     button.className = "close";
+//     button.appendChild(txt);
+//     myNodelist[i].appendChild(button);
+// }
+        function newElement() {
+        var todoList = [];
+        var valueTitle = $("div[role='tabpanel'].active .form-title").val();
+        var valueStatus = $("div[role='tabpanel'].active .form-status").val();
+        var valueDescription = $("div[role='tabpanel'].active .field-textarea").val();
+        var valueData = $("div[role='tabpanel'].active .date").val();
+
+        console.log(valueData);
+        console.log(valueTitle);
+        console.log(valueStatus);
+        var temp = {};
+        temp.title = valueTitle;
+        temp.status = valueStatus;
+        var i = todoList.length;
+        todoList[i] = temp;
+}
+
 

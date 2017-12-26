@@ -1,23 +1,24 @@
 .head-text{
   text-align: center;
+    margin: 5px;
 }
 
 #selectType {
     width: 90%;
-    padding: 12px 20px;
+    padding: 10px 16px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid PaleTurquoise;
+    border: 2px solid PaleTurquoise;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
 .form-field {
     width: 90%;
-    padding: 12px 20px;
+    padding: 8px 16px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid PaleTurquoise;
+    border: 2px solid PaleTurquoise;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -30,13 +31,12 @@
     width: 90%;
     background-color: DarkBlue;
     color: white;
-    padding: 14px 20px;
+    padding: 9px 16px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     display: block;
-
 }
 
 .box {
@@ -44,11 +44,10 @@
     background-color: SteelBlue;
     padding: 20px;
     margin: 0 auto;
-    height: 650px;
+    height: 700px;
     width: 60%;
     border: 2px solid DarkBlue;
 }
-
 
 .validation-field {
     display: block;
@@ -64,54 +63,106 @@
     float: left;
 }
 
-.nav-link active,.nav-link {
-text-line-through-color: black;
+.nav-link {
+    text-line-through-color: black;
     background: white;
     border: 3px solid PaleTurquoise;
-    margin: 10px;
+    margin: 8px;
 }
 
 .container {
     background:SteelBlue;
     width: 60%;
     float: right;
-    height: 60%;
+    height: 70%;
 }
 
 .field-title {
     float: left;
-    margin: 8px;
+    margin: 11px;
+    border-radius: 4px;
 }
 
 .field-status {
     float: right;
-    margin: 10px;
+    margin: 11px ;
+    border-radius: 4px;
 }
 
 .field-description {
-    height: 50%;
+    height: 60%;
     width: 100%;
-
 }
 
 .field-textarea{
-    height: 100%;
-    width: 100%;
-
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60%;
+    width: 95%;
+    border-radius: 4px;
+    border: 2px solid PaleTurquoise;
 }
 
 .tab-content {
     width: 100%;
     height: 100%;
+    text-align: center;
 }
-
 
 #menu1,#menu2,#menu3{
     float: right;
     width: 100%;
-    height: 100%;
+    height: 70%;
     background: SkyBlue;
+    border-radius: 4px;
 }
+
+.form-title, .form-status{
+    border-radius: 4px;
+    padding: 9px 22px;
+    border: 2px solid PaleTurquoise;
+}
+
+.add-container {
+    position: relative;
+    top: 30px;
+    right: 42%;
+    float: right;
+
+}
+
+.addBtn {
+    margin: auto;
+    width: 90%;
+    background-color: DarkBlue;
+    color: white;
+    padding: 7px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer {
+    width: 100%;
+    height: 25%;
+    border-radius: 4px;
+    border: 2px solid PaleTurquoise;
+    position: relative;
+    top: 415px;
+}
+
+.date {
+    width: 80%;
+    padding: 7px 80px;
+    border-radius: 4px;
+    text-align: left;
+    border: 2px solid PaleTurquoise;
+    text-align-all: center;
+}
+
+
+
 
 
 
