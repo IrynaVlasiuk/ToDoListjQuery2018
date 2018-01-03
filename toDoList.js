@@ -19,6 +19,24 @@ function HideAll() {
     $("#fname, #lname, #button, #specialization, #jobTitle").hide();
 }
 
+$("#menu1").hide();
+$("#menu2").hide();
+$("#menu3").hide();
+
+function ShowTaskForUser() {
+    $("#menu1").show();
+}
+
+function ShowTasksForStudent() {
+    ShowTaskForUser();
+    $("#menu2").show();
+}
+
+function ShowTasksForDeveloper() {
+    ShowTasksForStudent();
+    $("#menu3").show();
+}
+
 $("#selectType").change(function () {
     var type = $(this).val();
 
@@ -68,42 +86,53 @@ function createUser() {
         case TypeUser:
             var user = new User({fname:fname, surname:lname});
             console.log(user);
+            ShowTaskForUser();
             break;
         case TypeStudent:
             var student = new Student({fname:fname, surname:lname, specialization:speciality});
             console.log(student);
+            ShowTasksForStudent();
             break;
         case TypeDeveloper:
             var developer = new Developer({fname:fname, surname:lname, specialization:speciality,jobTitle:jobTitle});
             console.log(developer);
+            ShowTasksForDeveloper();
             break;
     }
+    return true;
 }
 
-// var myNodelist = document.getElementsByTagName("li");
-// var i;
-// for (i = 0; i < myNodelist.length; i++) {
-//     var button = document.createElement("input");
-//     var txt = document.createTextNode("\u00D7");
-//     button.className = "close";
-//     button.appendChild(txt);
-//     myNodelist[i].appendChild(button);
-// }
-        function newElement() {
-        var todoList = [];
-        var valueTitle = $("div[role='tabpanel'].active .form-title").val();
-        var valueStatus = $("div[role='tabpanel'].active .form-status").val();
-        var valueDescription = $("div[role='tabpanel'].active .field-textarea").val();
-        var valueData = $("div[role='tabpanel'].active .date").val();
+function newElement() {
 
-        console.log(valueData);
-        console.log(valueTitle);
-        console.log(valueStatus);
-        var temp = {};
-        temp.title = valueTitle;
-        temp.status = valueStatus;
-        var i = todoList.length;
-        todoList[i] = temp;
+     var valueTitle = $("div[role='tabpanel'].active .form-title").val();
+     var valueStatus = $("div[role='tabpanel'].active .form-status").val();
+     var valueDescription = $("div[role='tabpanel'].active .field-textarea").val();
+     var valueData = $("div[role='tabpanel'].active .date").val();
+
+     var todoList = [];
+     var temp = {};
+     temp.check = false;
+     temp.title = valueTitle;
+     temp.status = valueStatus;
+     temp.description = valueDescription;
+     temp.data = valueData;
+     var i = todoList.length;
+     todoList[i] = temp;
+     console.log(todoList);
+     var head = '';
+
+     for(var key in todoList){
+        head += todoList[key].title;
+        head += todoList[key].status;
+        head += todoList[key].description;
+    }
+
+
+
 }
+
+
+
+
 
 

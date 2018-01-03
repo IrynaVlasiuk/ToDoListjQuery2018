@@ -3,7 +3,7 @@ var User = function(obj) {
     this.surname = obj.surname;
 };
 
-User.prototype.createSimpleTask = function (title,status) {
+User.prototype.createSimpleTask = function (obj) {
     console.log("Title: "+this.title);
     console.log("Status: "+this.status);
     };
@@ -13,7 +13,7 @@ var Student = function(obj) {
     this.specialization = obj.specialization;
 };
 
-Student.prototype.createHomeTask = function (title,status,description) {
+Student.prototype.createHomeTask = function (obj) {
     console.log("Title: "+this.title);
     console.log("Status: "+this.status);
     console.log("Description: "+this.description);
@@ -24,7 +24,7 @@ var Developer = function(obj) {
     this.jobTitle = obj.jobTitle;
 };
 
-Developer.prototype.createProjectTask = function (title,status,description,deadlineDate) {
+Developer.prototype.createProjectTask = function (obj) {
     console.log("Title: "+this.title);
     console.log("Status: "+this.status);
     console.log("Description: "+this.description);
