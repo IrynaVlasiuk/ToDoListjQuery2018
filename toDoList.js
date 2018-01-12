@@ -19,6 +19,7 @@ $('#link-menu-1,#link-menu-2,#link-menu-3').hide();
 
 function ShowTaskForUser() {
     $('#link-menu-1').show();
+    $('#link-menu-2,#link-menu-3').hide();
 }
 
 function ShowTasksForStudent() {
@@ -65,7 +66,7 @@ function validateForm(){
 
 function validateFieldsTask() {
     var isValid = true;
-    $("div[role='tabpanel'].active").find("input[type='text']").each(function () {
+    $("div[role='tabpanel'].active").find("input[type='text'],input[type='date'], textarea").each(function () {
         if($(this).css("display") !== "none" && $(this).val() === "") {
             $(this).addClass("invalid-field");
             isValid = false;

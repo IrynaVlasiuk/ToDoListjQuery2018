@@ -48,7 +48,7 @@
 }
 
 .box {
-    border-radius: 5px;
+    border-radius: 20px;
     background-image:url(744081-background-wallpaper.jpg);
     padding: 20px;
     margin: 0 auto;
@@ -109,7 +109,6 @@
     width: 95%;
     border-radius: 4px;
     border: 1px solid Grey;
-    text-align: unset;
 }
 .field-textarea:focus{
     background-color: LightCyan;
@@ -218,7 +217,7 @@
     text-decoration : line-through;
 }
 
-.input-close {
+.span-close {
     float: right;
     width: 35px;
     padding: 0 0 0 10px;
@@ -227,10 +226,12 @@
     background: AliceBlue;
 }
 
-.input-close:after{
-    content: ' \2573';
+.span-close:after{
+    content: ' \2715';
+    width: 70%;
+    height: 70%;
 }
-.input-close:hover {
+.span-close:hover {
     background: yellow;
 }
 

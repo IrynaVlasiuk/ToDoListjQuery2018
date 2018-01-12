@@ -19,14 +19,14 @@ function newSimpleTask() {
     if(!validateFieldsTask()) return;
     getDataOfTask();
     var div = document.createElement('div');
-    var inputClose = document.createElement('input');
-    inputClose.className = 'input-close';
+    var spanClose = document.createElement('span');
+    spanClose.className = 'span-close';
     div.innerText = createSimpleTask(temp);
     div.className = "task";
     document.getElementById('list-tasks').appendChild(div);
-    div.appendChild(inputClose);
+    div.appendChild(spanClose);
     div.onclick = completedTask;
-    inputClose.onclick = function () {
+    spanClose.onclick = function () {
         div.remove();
     };
 }
@@ -35,14 +35,14 @@ function newHomeTask() {
     if(!validateFieldsTask()) return;
     getDataOfTask();
     var div = document.createElement('div');
-    var inputClose = document.createElement('input');
-    inputClose.className = 'input-close';
+    var spanClose = document.createElement('span');
+    spanClose.className = 'span-close';
     div.innerText = createHomeTask(temp);
     div.className = "task";
     document.getElementById('list-tasks').appendChild(div);
-    div.appendChild(inputClose);
+    div.appendChild(spanClose);
     div.onclick = completedTask;
-    inputClose.onclick = function () {
+    spanClose.onclick = function () {
         div.remove();
     }
 }
@@ -51,14 +51,14 @@ function newProjectTask() {
     if(!validateFieldsTask()) return;
     getDataOfTask();
     var div = document.createElement('div');
-    var inputClose = document.createElement('input');
-    inputClose.className = 'input-close';
+    var spanClose = document.createElement('span');
+    spanClose.className = 'span-close';
     div.innerText = createProjectTask(temp);
     div.className = "task";
     document.getElementById('list-tasks').appendChild(div);
-    div.appendChild(inputClose);
+    div.appendChild(spanClose);
     div.onclick = completedTask;
-    inputClose.onclick = function () {
+    spanClose.onclick = function () {
         div.remove();
     }
 }
