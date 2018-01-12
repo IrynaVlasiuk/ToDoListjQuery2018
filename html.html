@@ -4,7 +4,7 @@
     <title>ToDoList</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -43,14 +43,13 @@
 
     <div class="container">
         <ul class="nav nav-pills" role="tablist">
-            <li><a class="nav-link active"  data-toggle="pill" role="tab" href="#menu1">Simple task</a></li>
-            <li><a class="nav-link" data-toggle="pill" role="tab" href="#menu2">Home task</a></li>
-            <li ><a class="nav-link" data-toggle="pill" role="tab" href="#menu3">Project task</a></li>
+            <li><a id="link-menu-1" class="nav-link"  data-toggle="pill" role="tab" href="#menu1">Simple task</a></li>
+            <li><a id="link-menu-2" class="nav-link" data-toggle="pill" role="tab" href="#menu2">Home task</a></li>
+            <li><a id="link-menu-3" class="nav-link" data-toggle="pill" role="tab" href="#menu3">Project task</a></li>
         </ul>
 
         <div class="tab-content">
-
-              <div role="tabpanel" class="tab-pane active fade in" id="menu1">
+              <div role="tabpanel" class="tab-pane fade" id="menu1">
                   <div class="field-title">
                       <input type="text" class="form-title" id="title1" placeholder="Title...">
                   </div>
@@ -58,13 +57,13 @@
                       <input type="text" class="form-status" id="status1" placeholder="Status...">
                   </div>
                   <div class="field-description">
-                      <textarea class="field-textarea" placeholder="Description..." disabled></textarea>
+                      <input class="field-textarea" placeholder="Description..." disabled>
                   </div>
                   <div class="field-date">
                       <input type="date" class="date" disabled>
                   </div>
                   <div class="add-container">
-                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newElement()">
+                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newSimpleTask()">
                   </div>
               </div>
 
@@ -76,13 +75,13 @@
                       <input type="text" class="form-status" id="status2" placeholder="Status...">
                   </div>
                   <div class="field-description">
-                      <textarea class="field-textarea" placeholder="Description..."></textarea>
+                      <input type="text" class="field-textarea" placeholder="Description...">
                   </div>
                   <div class="field-date">
-                      <input type="date" class="date" disabled>
+                      <input  type="date" class="date" disabled>
                   </div>
                   <div class="add-container">
-                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newElement()">
+                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newHomeTask()">
                   </div>
               </div>
 
@@ -94,31 +93,25 @@
                       <input type="text" class="form-status" placeholder="Status...">
                   </div>
                   <div class="field-description">
-                      <textarea class="field-textarea" placeholder="Description..."></textarea>
+                      <input type="text" class="field-textarea" placeholder="Description...">
                   </div>
                   <div class="field-date">
                       <input type="date" class="date">
                   </div>
                   <div class="add-container">
-                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newElement()">
+                      <input type="button" value="Add" formmethod="post" class="addBtn" onclick="newProjectTask()">
                   </div>
-
-
               </div>
-
-           </div>
         </div>
-    <div id="link-tasks">
-        <ol id="ol-tasks">
-            <li class="li-task">task1</li>
-            <li class="li-task">task2</li>
-            <li class="li-task">task3</li>
-        </ol>
-    </div>
+     </div>
+
+    <div id="list-tasks"></div>
 </div>
 
 <script src="classes.js"></script>
 <script src="constants.js"></script>
 <script src="toDoList.js"></script>
+<script src="createTask.js"></script>
+<script src="createUser.js"></script>
 </body>
 </html>

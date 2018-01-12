@@ -8,7 +8,7 @@
     padding: 10px 16px;
     margin: 8px 0;
     display: inline-block;
-    border: 2px solid PaleTurquoise;
+    border: 1px solid Grey;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -22,14 +22,17 @@
     padding: 8px 16px;
     margin: 8px 0;
     display: inline-block;
-    border: 2px solid PaleTurquoise;
+    border: 1px solid Grey;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
+#form {
+    margin-left: 20px;
+}
 
 .form-field:focus {
-    background-color: CornflowerBlue;
+    background-color: LightCyan;
 }
 
 .form-button {
@@ -46,7 +49,7 @@
 
 .box {
     border-radius: 5px;
-    background-color: SteelBlue;
+    background-image:url(744081-background-wallpaper.jpg);
     padding: 20px;
     margin: 0 auto;
     height: 700px;
@@ -66,17 +69,21 @@
 .input-fields {
     width: 40%;
     float: left;
+    height: 55%;
 }
 
 .nav-link {
     text-line-through-color: black;
     background: white;
-    border: 3px solid PaleTurquoise;
-    margin: 8px 45px 15px 10px;
+    border: 1px solid Grey;
+    margin: 8px 25px 15px 25px;
 }
 
+.nav {
+    padding-left: 10px;
+}
 .container {
-    background:SteelBlue;
+
     width: 60%;
     float: right;
     height: 55%;
@@ -94,41 +101,50 @@
     border-radius: 4px;
 }
 
-.field-description {
-    height: 60%;
-    width: 100%;
-}
-
 .field-textarea{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 60%;
+    height: 110px;
     width: 95%;
     border-radius: 4px;
-    border: 2px solid PaleTurquoise;
+    border: 1px solid Grey;
+    text-align: unset;
+}
+.field-textarea:focus{
+    background-color: LightCyan;
 }
 
 .tab-content {
     width: 100%;
-    height: 100%;
+    height: 70%;
     text-align: center;
 }
 
 #menu1,#menu2,#menu3{
     float: right;
     width: 100%;
-    height: 70%;
+    height: 100%;
     background: SkyBlue;
     border-radius: 4px;
+    border: 1px solid Grey;
 }
 
 .form-title, .form-status{
     border-radius: 4px;
     padding: 9px 22px;
-    border: 2px solid PaleTurquoise;
+    border: 1px solid Grey;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
+.form-title:focus{
+    background-color: LightCyan;
+}
+
+.form-status:focus{
+    background-color: LightCyan;
+}
 .add-container {
     float: right;
     width: 31%;
@@ -147,20 +163,22 @@
     height: 96%;
 }
 
-#link-tasks {
+#list-tasks {
     width: 100%;
-    height: 25%;
+    height: 30%;
     border-radius: 4px;
-    border: 2px solid PaleTurquoise;
-    position: relative;
-    top: 415px;
+    display: inline-block;
+    margin-top: 15px;
+    overflow: scroll;
+    border: 2px solid Grey;
+    background: white;
 }
 
 .date {
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    border: 2px solid PaleTurquoise;
+    border: 1px solid Grey;
     text-align-all: center;
     margin: 14px ;
 }
@@ -171,6 +189,49 @@
     height: 15%;
 }
 
+.task {
+    cursor: pointer;
+    padding: 0 0 5px 15px;
+    background: AliceBlue;
+    font-size: 17px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid Grey;
+}
 
+.task:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.task:hover {
+    background: LightCyan;
+}
+
+.completed-task {
+    cursor: pointer;
+    padding: 0 0 5px 15px;
+    border-radius: 4px;
+    font-size: 17px;
+    width: 100%;
+    background: AliceBlue;
+    border: 1px solid Grey;
+    text-decoration : line-through;
+}
+
+.input-close {
+    float: right;
+    width: 35px;
+    padding: 0 0 0 10px;
+    height: 29px;
+    border: 1px;
+    background: AliceBlue;
+}
+
+.input-close:after{
+    content: ' \2573';
+}
+.input-close:hover {
+    background: yellow;
+}
 
 
