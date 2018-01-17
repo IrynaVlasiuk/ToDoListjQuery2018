@@ -67,7 +67,7 @@ function validateForm(){
 function validateFieldsTask() {
     var isValid = true;
     $("div[role='tabpanel'].active").find("input[type='text'],input[type='date'], textarea").each(function () {
-        if($(this).css("display") !== "none" && $(this).val() === "") {
+        if($(this).css("display") !== "none" && $(this).val() === "" && $(this).attr("disabled") == undefined) {
             $(this).addClass("invalid-field");
             isValid = false;
         } else {
@@ -76,5 +76,7 @@ function validateFieldsTask() {
     });
     return isValid;
 }
+
+
 
 
