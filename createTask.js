@@ -10,7 +10,7 @@ function getDataOfTask() {
     temp.status = valueStatus;
     temp.description = valueDescription;
     temp.deadlineDate = valueData;
-    $("div[role='tabpanel'].active").find("input[type='text']").each(function () {
+    $("div[role='tabpanel'].active").find("input[type='text'],input[type='date'], textarea").each(function () {
         $(this).val('');
     })
 }
